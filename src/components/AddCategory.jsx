@@ -14,12 +14,12 @@ export const AddCategory = ({ onAddCategory }) => {
     if (trimedInput.length < 1) {
       return;
     }
-    onAddCategory(trimedInput);
     setInputValue("");
+    onAddCategory(trimedInput);
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="formulario">
       <input
         type="text"
         placeholder="Buscar gifs"
@@ -31,5 +31,5 @@ export const AddCategory = ({ onAddCategory }) => {
 };
 
 AddCategory.propTypes = {
-  onAddCategory: PropTypes.func,
+  onAddCategory: PropTypes.func.isRequired,
 };
